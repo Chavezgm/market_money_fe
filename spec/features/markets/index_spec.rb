@@ -19,13 +19,13 @@ RSpec.describe "Market" do
     it 'US 1' do
      visit markets_path
       # When I visit '/markets'
-      within "#-market#{@market[:id]}" do
+      within "#-market-#{@market[:id]}" do
         expect(page).to have_content("14&U Farmers' Market")
         expect(page).to have_content("Washington")
         expect(page).to have_content("District of Columbia")
         # I see all markets listed with their name, city and state
 
-        click_button("See more info")
+        click_button("More info")
         # When I click a button to see more info on that market
 
         expect(current_path).to eq(market_path(@market[:id]))
