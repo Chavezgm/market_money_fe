@@ -1,21 +1,25 @@
+
 <h1>Markets</h1>
-<table>
+<table class="market-table">
   <thead>
     <tr>
       <th>Name</th>
       <th>City</th>
       <th>State</th>
-      <th>Actions</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @markets.each do |market| %>
-      <tr>
-        <td><%= market.name %></td>
-        <td><%= market.city %></td>
-        <td><%= market.state %></td>
-        
-      </tr>
+      <section id="-market-<%= market.id %>">
+
+        <tr>
+          <td><%= market.name %></td>
+          <td><%= market.city %></td>
+          <td><%= market.state %></td>
+          <td><%= button_to 'More info', market_path(market.id) %></td>
+        </tr>
+      </section>
     <% end %>
   </tbody>
 </table>
